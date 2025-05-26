@@ -37,6 +37,14 @@
             "count": 32
         },
         {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/windows/flutter/generated_plugin_registrant.cc",
+            "count": 32
+        },
+        {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/windows/flutter/generated_plugins.cmake",
+            "count": 31
+        },
+        {
             "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java",
             "count": 30
         },
@@ -51,14 +59,6 @@
         {
             "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/linux/flutter/generated_plugin_registrant.cc",
             "count": 30
-        },
-        {
-            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/windows/flutter/generated_plugin_registrant.cc",
-            "count": 30
-        },
-        {
-            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/windows/flutter/generated_plugins.cmake",
-            "count": 29
         },
         {
             "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/.dart_tool/dartpad/web_plugin_registrant.dart",
@@ -136,11 +136,11 @@
         },
         {
             "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/ios/Runner.xcodeproj/project.pbxproj",
-            "count": 9
+            "count": 10
         },
         {
             "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/macos/Runner.xcodeproj/project.pbxproj",
-            "count": 9
+            "count": 10
         },
         {
             "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/.dart_tool/version",
