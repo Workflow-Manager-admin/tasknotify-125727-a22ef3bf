@@ -4,8 +4,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'screens/home_screen.dart';
 import 'providers/task_provider.dart';
 
+import 'package:timezone/data/latest.dart' as tz;
+
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  tz.initializeTimeZones();
   final prefs = await SharedPreferences.getInstance();
   
   runApp(
