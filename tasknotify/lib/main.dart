@@ -28,11 +28,10 @@ class MyApp extends StatelessWidget {
       title: 'TaskNotify',
       theme: ThemeData.dark().copyWith(
         primaryColor: const Color(0xFF1976D2),
-        colorScheme: const ColorScheme.dark(
+        colorScheme: const ColorScheme.dark().copyWith(
           primary: Color(0xFF1976D2),
           secondary: Color(0xFF837272),
           surface: Color(0xFF303030),
-          background: Color(0xFF212121),
         ),
         appBarTheme: const AppBarTheme(
           backgroundColor: Color(0xFF1976D2),

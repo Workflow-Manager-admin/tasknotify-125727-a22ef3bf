@@ -20,6 +20,7 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
   final _descriptionController = TextEditingController();
   DateTime _selectedDateTime = DateTime.now();
   final NotificationService _notificationService = NotificationService();
+  bool _isSaving = false;
 
   @override
   void initState() {
@@ -39,6 +40,8 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
   }
 
   Future<void> _selectDateTime() async {
+    if (!mounted) return;
+    
     final DateTime? pickedDate = await showDatePicker(
       context: context,
       initialDate: _selectedDateTime,
@@ -46,11 +49,15 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
       lastDate: DateTime.now().add(const Duration(days: 365)),
     );
 
+    if (!mounted) return;
+
     if (pickedDate != null) {
       final TimeOfDay? pickedTime = await showTimePicker(
         context: context,
         initialTime: TimeOfDay.fromDateTime(_selectedDateTime),
       );
+
+      if (!mounted) return;
 
       if (pickedTime != null) {
         setState(() {
@@ -66,34 +73,43 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
     }
   }
 
-  void _saveTask() async {
-    if (_formKey.currentState!.validate()) {
-      final task = Task(
-        id: widget.task?.id,
-        title: _titleController.text,
-        description: _descriptionController.text,
-        scheduledTime: _selectedDateTime,
-        isCompleted: widget.task?.isCompleted ?? false,
-      );
+  Future<void> _saveTask() async {
+    if (_formKey.currentState!.validate() && !_isSaving) {
+      setState(() => _isSaving = true);
 
-      if (widget.task != null) {
-        await context.read<TaskProvider>().updateTask(task);
-        await _notificationService.cancelNotification(task.id);
-      } else {
-        await context.read<TaskProvider>().addTask(task);
-      }
-
-      if (!task.isCompleted && _selectedDateTime.isAfter(DateTime.now())) {
-        await _notificationService.scheduleNotification(
-          id: task.id,
-          title: 'Task Reminder: ${task.title}',
-          body: task.description,
-          scheduledTime: task.scheduledTime,
+      try {
+        final task = Task(
+          id: widget.task?.id,
+          title: _titleController.text,
+          description: _descriptionController.text,
+          scheduledTime: _selectedDateTime,
+          isCompleted: widget.task?.isCompleted ?? false,
         );
-      }
 
-      if (mounted) {
+        final taskProvider = context.read<TaskProvider>();
+
+        if (widget.task != null) {
+          await taskProvider.updateTask(task);
+          await _notificationService.cancelNotification(task.id);
+        } else {
+          await taskProvider.addTask(task);
+        }
+
+        if (!task.isCompleted && _selectedDateTime.isAfter(DateTime.now())) {
+          await _notificationService.scheduleNotification(
+            id: task.id,
+            title: 'Task Reminder: ${task.title}',
+            body: task.description,
+            scheduledTime: task.scheduledTime,
+          );
+        }
+
+        if (!mounted) return;
         Navigator.pop(context);
+      } finally {
+        if (mounted) {
+          setState(() => _isSaving = false);
+        }
       }
     }
   }
@@ -148,14 +164,16 @@ class _TaskFormScreenState extends State<TaskFormScreen> {
             ),
             const SizedBox(height: 32),
             ElevatedButton(
-              onPressed: _saveTask,
+              onPressed: _isSaving ? null : _saveTask,
               style: ElevatedButton.styleFrom(
                 padding: const EdgeInsets.symmetric(vertical: 16),
               ),
-              child: Text(
-                widget.task == null ? 'Add Task' : 'Update Task',
-                style: const TextStyle(fontSize: 16),
-              ),
+              child: _isSaving
+                  ? const CircularProgressIndicator()
+                  : Text(
+                      widget.task == null ? 'Add Task' : 'Update Task',
+                      style: const TextStyle(fontSize: 16),
+                    ),
             ),
           ],
         ),
