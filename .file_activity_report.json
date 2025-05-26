@@ -1,12 +1,60 @@
 {
     "top_n_overall": [
         {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/pubspec.yaml",
+            "count": 13
+        },
+        {
             "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/lib/main.dart",
             "count": 7
         },
         {
-            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/pubspec.yaml",
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/.dart_tool/package_config.json",
+            "count": 7
+        },
+        {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/pubspec.lock",
+            "count": 5
+        },
+        {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/.flutter-plugins",
+            "count": 4
+        },
+        {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/.flutter-plugins-dependencies",
+            "count": 4
+        },
+        {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/lib/screens/task_form_screen.dart",
             "count": 3
+        },
+        {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/.dart_tool/version",
+            "count": 3
+        },
+        {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/.dart_tool/package_config_subset",
+            "count": 3
+        },
+        {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/.dart_tool/dartpad/web_plugin_registrant.dart",
+            "count": 3
+        },
+        {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java",
+            "count": 3
+        },
+        {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/ios/Runner/GeneratedPluginRegistrant.h",
+            "count": 3
+        },
+        {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/ios/Runner/GeneratedPluginRegistrant.m",
+            "count": 3
+        },
+        {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/linux/flutter/generated_plugin_registrant.h",
+            "count": 2
         },
         {
             "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/lib/models",
@@ -23,15 +71,47 @@
         {
             "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/lib/screens",
             "count": 1
+        },
+        {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/windows/flutter/ephemeral",
+            "count": 1
+        },
+        {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/android/local.properties",
+            "count": 1
         }
     ],
     "top_n_last_10_min_accessed": [
+        {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/pubspec.yaml",
+            "count": 8
+        },
+        {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/.dart_tool/package_config.json",
+            "count": 4
+        },
         {
             "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/lib/main.dart",
             "count": 2
         },
         {
-            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/pubspec.yaml",
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/pubspec.lock",
+            "count": 2
+        },
+        {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/.flutter-plugins",
+            "count": 1
+        },
+        {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/.flutter-plugins-dependencies",
+            "count": 1
+        },
+        {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/android/local.properties",
+            "count": 1
+        },
+        {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/android/gradle.properties",
             "count": 1
         }
     ]
