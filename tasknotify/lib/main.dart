@@ -1,7 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:shared_preferences.dart';
+import 'screens/home_screen.dart';
+import 'providers/task_provider.dart';
 
-void main() {
-  runApp(const MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  final prefs = await SharedPreferences.getInstance();
+  
+  runApp(
+    ChangeNotifierProvider(
+      create: (context) => TaskProvider(prefs),
+      child: const MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -10,46 +22,24 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'AI Build Tool',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-        useMaterial3: true,
-      ),
-      home: const MyHomePage(title: 'tasknotify'),
-    );
-  }
-}
-
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key, required this.title});
-
-  final String title;
-
-  @override
-  State<MyHomePage> createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.inversePrimary,
-        title: Text(widget.title),
-      ),
-      body: const Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'tasknotify App is being generated...',
-              style: TextStyle(fontSize: 18),
-            ),
-            SizedBox(height: 20),
-            CircularProgressIndicator(),
-          ],
+      title: 'TaskNotify',
+      theme: ThemeData.dark().copyWith(
+        primaryColor: const Color(0xFF1976D2),
+        colorScheme: const ColorScheme.dark(
+          primary: Color(0xFF1976D2),
+          secondary: Color(0xFF837272),
+          surface: Color(0xFF424242),
+          background: Color(0xFF303030),
+        ),
+        appBarTheme: const AppBarTheme(
+          backgroundColor: Color(0xFF1976D2),
+          foregroundColor: Colors.white,
+        ),
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+          backgroundColor: Color(0xFF1976D2),
         ),
       ),
+      home: const HomeScreen(),
     );
   }
 }
