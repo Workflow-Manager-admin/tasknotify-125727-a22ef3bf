@@ -1,4 +1,22 @@
 {
-    "top_n_overall": [],
-    "top_n_last_10_min_accessed": []
+    "top_n_overall": [
+        {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/pubspec.yaml",
+            "count": 3
+        },
+        {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/lib/main.dart",
+            "count": 1
+        }
+    ],
+    "top_n_last_10_min_accessed": [
+        {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/pubspec.yaml",
+            "count": 1
+        },
+        {
+            "file": "/tmp/kavia/workspace/code-generation/tasknotify-125727-a22ef3bf/tasknotify/lib/main.dart",
+            "count": 1
+        }
+    ]
 }
