@@ -31,8 +31,8 @@ class MyApp extends StatelessWidget {
         colorScheme: const ColorScheme.dark(
           primary: Color(0xFF1976D2),
           secondary: Color(0xFF837272),
-          surface: Color(0xFF424242),
           surface: Color(0xFF303030),
+          background: Color(0xFF212121),
         ),
         appBarTheme: const AppBarTheme(
           backgroundColor: Color(0xFF1976D2),
@@ -41,6 +41,7 @@ class MyApp extends StatelessWidget {
         floatingActionButtonTheme: const FloatingActionButtonThemeData(
           backgroundColor: Color(0xFF1976D2),
         ),
+        scaffoldBackgroundColor: const Color(0xFF212121),
       ),
       home: const HomeScreen(),
     );
