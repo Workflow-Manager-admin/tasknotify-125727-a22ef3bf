@@ -51,9 +51,7 @@ class NotificationService {
       body,
       tz.TZDateTime.from(scheduledTime, tz.local),
       notificationDetails,
-      androidAllowWhileIdle: true,
-      uiLocalNotificationDateInterpretation:
-          UILocalNotificationDateInterpretation.absoluteTime,
+      matchDateTimeComponents: DateTimeComponents.time,
     );
   }
 
